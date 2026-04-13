@@ -1,66 +1,74 @@
-<!-- Replace entire file with this SAFE version -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:text="⚙️ Settings"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="⚙️ Trading Settings"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="32dp" />
+    <Spinner
+        android:id="@+id/brokerSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp" />
 
-        <Spinner android:id="@+id/brokerSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="24dp" />
+    <EditText
+        android:id="@+id/apiKeyEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="API Key"
+        android:inputType="text"
+        android:layout_marginBottom="16dp" />
 
-        <EditText android:id="@+id/apiKeyEditText"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="API Key"
-            android:inputType="text"
-            android:layout_marginBottom="16dp" />
+    <EditText
+        android:id="@+id/apiSecretEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="API Secret"
+        android:inputType="textPassword"
+        android:layout_marginBottom="24dp" />
 
-        <EditText android:id="@+id/apiSecretEditText"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:hint="API Secret"
-            android:inputType="textPassword"
-            android:layout_marginBottom="24dp" />
+    <EditText
+        android:id="@+id/lotsEditText"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:inputType="number"
+        android:text="1"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp" />
 
-        <EditText android:id="@+id/lotsEditText"
-            android:layout_width="100dp"
-            android:layout_height="48dp"
-            android:inputType="number"
-            android:text="1"
-            android:layout_gravity="center"
-            android:layout_marginBottom="24dp" />
+    <Switch
+        android:id="@+id/modeSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Live Mode"
+        android:layout_marginBottom="24dp" />
 
-        <Switch android:id="@+id/modeSwitch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Live Trading Mode"
-            android:layout_marginBottom="24dp" />
+    <Button
+        android:id="@+id/testConnectionButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Test Connection"
+        android:layout_marginBottom="16dp" />
 
-        <Button android:id="@+id/testConnectionButton"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:text="TEST CONNECTION"
-            android:layout_marginBottom="16dp" />
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="SAVE" />
 
-        <Button android:id="@+id/saveButton"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="SAVE SETTINGS" />
+    <Button
+        android:id="@+id/clearHistoryButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Clear History" />
 
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>
