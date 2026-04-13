@@ -1,87 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F8FAFC"
-    android:fitsSystemWindows="true">
+    android:orientation="vertical">
 
-    <!-- App Bar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#FFFFFF"
-        app:title="📊 Trade History"
-        app:titleTextColor="#1E293B"
-        app:elevation="4dp" />
+        android:layout_height="wrap_content"
+        android:text="📊 Trade History"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="24dp" />
 
-    <LinearLayout
+    <Spinner
+        android:id="@+id/filterSpinner"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="48dp"
+        android:layout_margin="16dp" />
 
-        <!-- Header & Filter -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp"
-            android:background="@drawable/header_gradient">
+    <TextView
+        android:id="@+id/summaryText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total: 0 trades"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Trade History"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
-                android:gravity="center"
-                android:layout_marginBottom="8dp" />
+    <TextView
+        android:id="@+id/emptyText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="60dp"
+        android:text="No trades yet"
+        android:textSize="18sp"
+        android:visibility="gone" />
 
-            <Spinner
-                android:id="@+id/filterSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:background="@drawable/spinner_background_white"
-                android:layout_marginBottom="16dp" />
-
-            <TextView
-                android:id="@+id/summaryText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Total: 0 trades | P&L: 0 points"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
-                android:gravity="center|bottom" />
-
-        </LinearLayout>
-
-        <!-- Content -->
-        <TextView
-            android:id="@+id/emptyText"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="60dp"
-            android:text="📊 No trades yet"
-            android:textSize="20sp"
-            android:textColor="#6B7280"
-            android:visibility="gone" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:clipToPadding="false"
-            android:padding="8dp"
-            android:scrollbars="vertical" />
-
-    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
 
 </LinearLayout>
